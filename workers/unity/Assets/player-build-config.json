@@ -1,12 +1,12 @@
 {
   "Deploy": {
-    "UnityWorker": {
+    "FSim": {
       "Targets": [
         "StandaloneLinux64?EnableHeadlessMode"
       ],
       "Assets": "Streaming"
     },
-    "UnityClient": {
+    "Client": {
       "Targets": [
         "StandaloneWindows",
         "StandaloneOSXIntel64"
@@ -15,13 +15,13 @@
     }
   },
   "Develop": {
-    "UnityWorker": {
+    "FSim": {
       "Targets": [
         "Current"
       ],
       "Assets": "Streaming"
     },
-    "UnityClient": {
+    "Client": {
       "Targets": [
         "Current"
       ],

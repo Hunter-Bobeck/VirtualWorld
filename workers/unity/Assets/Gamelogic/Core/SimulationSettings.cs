@@ -45,8 +45,8 @@ namespace Assets.Gamelogic.Core
         public static int TreeMaxHealth = 3;
         public static int HarvestReturnQuantity = 1;
         public static int TreeBurningTimeSecs = 10;
-        public static int TreeStumpRegrowthTimeSecs = 300;
-        public static int BurntTreeRegrowthTimeSecs = 600;
+        public static int TreeStumpRegrowthTimeSecs = 300; 
+        public static int BurntTreeRegrowthTimeSecs = 600; 
         public static float TreeIgnitionTimeBuffer = 0.4f;
         public static float TreeExtinguishTimeBuffer = 1f;
         public static float TreeCutDownTimeBuffer = 1f;
@@ -55,11 +55,11 @@ namespace Assets.Gamelogic.Core
         public static int AttemptedTreeCount = 30000;
         public static float TreeJitter = 2.0f;
         public static int NPCCount = 40;
-
+		
         // Component Updates
         public static int TransformUpdatesToSkipBetweenSends = 5;
         public static float AngleQuantisationFactor = 2f;
-
+        
         // Worker Connection
         public const int TargetFramerateFSim = 60;
         public static int TargetFramerate = 120;
@@ -140,16 +140,16 @@ namespace Assets.Gamelogic.Core
         // Buildings
         public static int HQMaxHealth = 20;
         public static int BarracksMaxHealth = 10;
-        public static float LumberjackSpawningCooldown = 600f;
-        public static float WizardSpawningCooldown = 15;
-        public static float SpawnOffsetFactor = 5f;
-        public static float PlayerSpawnOffsetFactor = 48.0f;
+        public static float LumberjackSpawningCooldown = 50f; 
+        public static float WizardSpawningCooldown = 15; 
+        public static float SpawnOffsetFactor = 5f; 
+        public static float PlayerSpawnOffsetFactor = 48.0f; 
         public static int HQStartingLumberjacksCount = 20; 
-        public static int HQStartingWizardsCount = 0;
-        public static float DefaultHQBarracksSpawnRadius = 25f;
+        public static int HQStartingWizardsCount = 0; 
+        public static float DefaultHQBarracksSpawnRadius = 25f; 
         public static float MaxHQBarracksSpawnRadius = 200f;
         public static float HQBarracksSpawnRadiusIncrease = 10f;
-        public static int HQBarracksSpawnPositionPickingRetries = 10;
+        public static int HQBarracksSpawnPositionPickingRetries = 10; 
         public static float HQBarracksSpawnPositionSamplingHeight = 10f;
         public static float HQBarracksSpawnPositionSamplingRadius = 10f;
         public static float NPCWizardDefensivePriority = 0.8f;
@@ -168,7 +168,7 @@ namespace Assets.Gamelogic.Core
         public static Color BlueTeamColor = new Color(0.102f, 0.455f, 0.859f);
         public static Color[] TeamColors = {RedTeamColor, BlueTeamColor};
 
-        public static Coordinates[] TeamHQLocations =
+        public static Coordinates[] TeamHQLocations = 
         {
             new Coordinates(-150.0, 0.0, -100.0),
             new Coordinates(230.0, 0.0, 150.0)

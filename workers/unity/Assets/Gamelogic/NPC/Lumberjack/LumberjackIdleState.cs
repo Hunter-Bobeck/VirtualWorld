@@ -85,7 +85,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
 
         private void MoveToPosition(Vector3 position)
         {
-            Owner.TriggerTransition(LumberjackFSMState.StateEnum.MOVING_TO_TARGET, new EntityId(), position);
+            Owner.TriggerTransition(LumberjackFSMState.StateEnum.MOVING_TO_TARGET, EntityId.InvalidEntityId, position);
         }
     }
 }

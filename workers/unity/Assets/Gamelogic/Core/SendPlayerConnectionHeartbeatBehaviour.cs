@@ -6,7 +6,6 @@ using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Core;
 using Improbable.Unity.Visualizer;
-using Improbable.Collections;
 
 namespace Assets.Gamelogic.Core
 {
@@ -14,30 +13,30 @@ namespace Assets.Gamelogic.Core
     /// Regularly notifies the simulation manager entity that this client is still alive and connected.
     /// When this times out (in case of an event like a client crash), the simulation manager entity will clean up our player from the world.
     /// </summary>
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class SendPlayerConnectionHeartbeatBehaviour : MonoBehaviour
     {
         [Require] private ClientAuthorityCheck.Writer authCheck;
 
-		private Option<EntityId> entityId;
+        private EntityId entityId;
         private Coroutine heartbeatCoroutine;
 
         private void OnEnable()
         {
-			entityId.Set(gameObject.EntityId());
+            entityId = gameObject.EntityId();
             SendHeartbeat();
             heartbeatCoroutine = StartCoroutine(TimerUtils.CallRepeatedly(SimulationSettings.HeartbeatInterval, SendHeartbeat));
         }
 
         private void OnDisable()
         {
-			entityId.Clear();
+            entityId = EntityId.InvalidEntityId;
             StopCoroutine(heartbeatCoroutine);
         }
 
         private void SendHeartbeat()
         {
-			SpatialOS.Commands.SendCommand(authCheck, Heartbeat.Commands.Heartbeat.Descriptor, new Nothing(), entityId.Value, _ => { });
+            SpatialOS.Commands.SendCommand(authCheck, Heartbeat.Commands.Heartbeat.Descriptor, new Nothing(), entityId, _ => { });
         }
     }
 }

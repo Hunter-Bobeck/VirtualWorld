@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Core
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class FootstepAudioTriggers : MonoBehaviour
     {
         [SerializeField] private AudioClip LeftFootStep;

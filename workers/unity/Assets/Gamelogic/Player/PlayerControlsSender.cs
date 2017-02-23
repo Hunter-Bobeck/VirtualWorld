@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Player
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class PlayerControlsSender : MonoBehaviour
     {
         [Require] private PlayerControls.Writer playerControls;

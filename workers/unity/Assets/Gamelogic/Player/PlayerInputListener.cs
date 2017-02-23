@@ -8,12 +8,10 @@ using Improbable.Player;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
-using Improbable.Communication;
-using Assets.Gamelogic.Communication;
 
 namespace Assets.Gamelogic.Player
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class PlayerInputListener : MonoBehaviour
     {
         [Require] private ClientAuthorityCheck.Writer clientAuthorityCheck;

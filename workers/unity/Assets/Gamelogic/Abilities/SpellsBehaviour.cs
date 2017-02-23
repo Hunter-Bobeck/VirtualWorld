@@ -12,7 +12,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Abilities
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class SpellsBehaviour : MonoBehaviour
     {
         [Require] private Spells.Writer spells;
@@ -70,7 +70,7 @@ namespace Assets.Gamelogic.Abilities
             for (var spellTargetIndex = 0; spellTargetIndex < targetCount; spellTargetIndex++)
             {
                 var targetEntityId = spellTargets[spellTargetIndex].gameObject.EntityId();
-				if (targetEntityId.IsValid())
+                if (targetEntityId != EntityId.InvalidEntityId)
                 {
                     switch (spellType)
                     {

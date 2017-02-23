@@ -24,7 +24,7 @@ type FlammableData {
 component Flammable {
   id = 1400;
   data FlammableData;
-  command improbable.core.Nothing ignite(improbable.core.Nothing);
-  command improbable.core.Nothing extinguish(ExtinguishRequest);
-  command improbable.core.Nothing set_can_be_ignited(SetCanBeIgnitedRequest);
+  command improbable.core.Nothing ignite returns improbable.core.Nothing;
+  command ExtinguishRequest extinguish returns improbable.core.Nothing;
+  command SetCanBeIgnitedRequest set_can_be_ignited returns improbable.core.Nothing;
 }

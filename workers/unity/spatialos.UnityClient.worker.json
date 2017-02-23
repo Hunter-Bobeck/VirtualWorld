@@ -1,11 +1,11 @@
 {
   "build": {
-    "tasks_filename": "spatialos.unity.client.build.json",
+    "tasks_filename": "spatialos.client.build.json",
     "generated_build_scripts_type": "unity"
   },
   "bridge": {
-    "worker_attribute_set": {
-      "attributes": [
+    "worker_claim": {
+      "claims": [
         "visual"
       ]
     },
@@ -44,7 +44,7 @@
           "+appName",
           "${IMPROBABLE_PROJECT_NAME}",
           "-logfile",
-          "external-default-unityclient.log"
+          "external-default-client.log"
         ]
       },
       "macos": {
@@ -61,7 +61,7 @@
           "+appName",
           "${IMPROBABLE_PROJECT_NAME}",
           "-logfile",
-          "external-default-unityclient.log"
+          "external-default-client.log"
         ]
       }
     }

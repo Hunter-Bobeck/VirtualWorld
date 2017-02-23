@@ -65,7 +65,7 @@ namespace Assets.Gamelogic.NPC.Wizard
 
         private void MoveToPosition(Vector3 position)
         {
-            Owner.TriggerTransition(WizardFSMState.StateEnum.MOVING_TO_TARGET, new EntityId(), position);
+            Owner.TriggerTransition(WizardFSMState.StateEnum.MOVING_TO_TARGET, EntityId.InvalidEntityId, position);
         }
     }
 }

@@ -13,6 +13,6 @@ component PlayerLifeCycle {
   
   map<string, EntityId> player_entity_ids = 1;
   
-  command improbable.core.Nothing spawn_player(SpawnPlayerRequest);
-  command improbable.core.Nothing delete_player(DeletePlayerRequest);
+  command SpawnPlayerRequest spawn_player returns improbable.core.Nothing;
+  command DeletePlayerRequest delete_player returns improbable.core.Nothing;
 }

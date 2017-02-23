@@ -9,5 +9,5 @@ type AddResource {
 component StockpileDepository {
   id = 1702;
   bool can_accept_resources = 1;
-  command improbable.core.Nothing add_resource(AddResource);
+  command AddResource add_resource returns improbable.core.Nothing;
 }

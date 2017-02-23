@@ -54,7 +54,7 @@ namespace Assets.Gamelogic.Global
             }
 
             // Mark as requested
-			playerEntityIds.Add(responseHandle.CallerInfo.CallerWorkerId, new EntityId());
+            playerEntityIds.Add(responseHandle.CallerInfo.CallerWorkerId, EntityId.InvalidEntityId);
 
             // Request Id
             RequestPlayerEntityId(responseHandle.CallerInfo.CallerWorkerId);
@@ -75,7 +75,7 @@ namespace Assets.Gamelogic.Global
                     return;
                 }
 
-					if (playerEntityIds != null && playerEntityIds.ContainsKey(workerId) && !playerEntityIds[workerId].IsValid())
+                if (playerEntityIds != null && playerEntityIds.ContainsKey(workerId) && EntityId.IsInvalidEntityId(playerEntityIds[workerId]))
                 {
                     playerEntityIds[workerId] = result.Response.Value;
 
@@ -109,7 +109,7 @@ namespace Assets.Gamelogic.Global
             if (playerEntityIds.ContainsKey(responseHandle.CallerInfo.CallerWorkerId))
             {
                 var entityId = playerEntityIds[responseHandle.CallerInfo.CallerWorkerId];
-                if (entityId.IsValid())
+                if (EntityId.IsValidEntityId(entityId))
                 {
 
                     SpatialOS.Commands.DeleteEntity(playerLifeCycle, entityId, result =>

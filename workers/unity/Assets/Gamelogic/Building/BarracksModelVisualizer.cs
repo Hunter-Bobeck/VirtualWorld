@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Building
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class BarracksModelVisualizer : MonoBehaviour
     {
         [Require] BarracksInfo.Reader barracksInfo;

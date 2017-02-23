@@ -53,7 +53,7 @@ namespace Assets.Gamelogic.NPC.Wizard
             var targetGameObject = NPCUtils.GetTargetGameObject(Owner.Data.targetEntityId);
             if (targetGameObject == null)
             {
-                Owner.TriggerTransition(WizardFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+                Owner.TriggerTransition(WizardFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
                 return;
             }
             if (NPCUtils.IsTargetDefendable(parentBehaviour.gameObject, targetGameObject))
@@ -61,7 +61,7 @@ namespace Assets.Gamelogic.NPC.Wizard
                 spellsBehaviour.CastSpell(SpellType.RAIN, targetGameObject.transform.position);
             }
             spellCastFinishDelayCoroutine = parentBehaviour.StartCoroutine(TimerUtils.WaitAndPerform(SimulationSettings.PlayerCastAnimationTime, () => {
-                Owner.TriggerTransition(WizardFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+                Owner.TriggerTransition(WizardFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
             }));
         }
     }

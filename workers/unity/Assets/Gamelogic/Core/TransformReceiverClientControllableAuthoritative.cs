@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Core
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class TransformReceiverClientControllableAuthoritative : MonoBehaviour
     {
         [Require] private ClientAuthorityCheck.Writer clientAuthorityCheck;

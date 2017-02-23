@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Fire
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class FlammableVisualizer : MonoBehaviour
     {
         [Require] private Flammable.Reader flammable;

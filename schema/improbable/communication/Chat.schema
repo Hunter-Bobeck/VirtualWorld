@@ -8,6 +8,6 @@ type ChatMessage {
 
 component Chat {
   id = 1900;
-  command improbable.core.Nothing send_chat(ChatMessage);
+  command ChatMessage send_chat returns improbable.core.Nothing;
   event ChatMessage chat_sent;
 }

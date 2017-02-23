@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Building
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class BarracksBehaviour : MonoBehaviour, IFlammable
     {
         [Require] private BarracksInfo.Writer barracksInfo;

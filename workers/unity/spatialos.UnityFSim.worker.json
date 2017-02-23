@@ -1,11 +1,11 @@
 {
   "build": {
-    "tasks_filename": "spatialos.unity.worker.build.json",
+    "tasks_filename": "spatialos.fsim.build.json",
     "generated_build_scripts_type": "unity"
   },
   "bridge": {
-    "worker_attribute_set": {
-      "attributes": [
+    "worker_claim": {
+      "claims": [
         "physics"
       ]
     },
@@ -25,8 +25,8 @@
   },
   "managed": {
     "linux": {
-      "artifact_name": "UnityWorker@Linux.zip",
-      "command": "UnityWorker@Linux",
+      "artifact_name": "UnityFSim@Linux.zip",
+      "command": "UnityFSim@Linux",
       "arguments": [
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
@@ -53,8 +53,8 @@
       ]
     },
     "windows": {
-      "artifact_name": "UnityWorker@Windows.zip",
-      "command": "UnityWorker@Windows.exe",
+      "artifact_name": "UnityFSim@Windows.zip",
+      "command": "UnityFSim@Windows.exe",
       "arguments": [
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
@@ -81,8 +81,8 @@
       ]
     },
     "macos": {
-      "artifact_name": "UnityWorker@Mac.zip",
-      "command": "UnityWorker@Mac.app/Contents/MacOS/UnityWorker@Mac",
+      "artifact_name": "UnityFSim@Mac.zip",
+      "command": "UnityFSim@Mac.app/Contents/MacOS/UnityFSim@Mac",
       "arguments": [
         "+appName",
         "${IMPROBABLE_PROJECT_NAME}",
@@ -113,12 +113,12 @@
     "default": {
       "run_type": "EXECUTABLE",
       "windows": {
-        "command": "build/worker/UnityWorker@Windows/UnityWorker@Windows.exe",
+        "command": "build/worker/UnityFSim@Windows/UnityFSim@Windows.exe",
         "arguments": [
           "+assemblyName",
           "local_assembly",
           "+engineType",
-          "UnityWorker",
+          "UnityFSim",
           "+infraServicesUrl",
           "http://127.0.0.1:21000",
           "+appName",
@@ -126,18 +126,18 @@
           "-batchmode",
           "-nographics",
           "-logfile",
-          "external-default-unityworker.log"
+          "external-default-fsim.log"
         ]
       },
       "macos": {
         "command": "open",
         "arguments": [
-          "./build/worker/UnityWorker@Mac/UnityWorker@Mac.app",
+          "./build/worker/UnityFSim@Mac/UnityFSim@Mac.app",
           "--args",
           "+assemblyName",
           "local_assembly",
           "+engineType",
-          "UnityWorker",
+          "UnityFSim",
           "+infraServicesUrl",
           "http://127.0.0.1:21000",
           "+appName",
@@ -145,7 +145,7 @@
           "-batchmode",
           "-nographics",
           "-logfile",
-          "external-default-unityworker.log"
+          "external-default-fsim.log"
         ]
       }
     }

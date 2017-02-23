@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.NPC.Lumberjack
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class LumberjackBehaviour : MonoBehaviour, IFlammable
     {
         [Require] private NPCLumberjack.Writer npcLumberjack;
@@ -20,7 +20,7 @@ namespace Assets.Gamelogic.NPC.Lumberjack
         [Require] private TeamAssignment.Reader teamAssignment;
 
         [SerializeField] private TargetNavigationBehaviour navigation;
-
+        
         private LumberjackStateMachine stateMachine;
 
         private void Awake()
@@ -41,12 +41,12 @@ namespace Assets.Gamelogic.NPC.Lumberjack
 
         public void OnIgnite()
         {
-			stateMachine.TriggerTransition(LumberjackFSMState.StateEnum.ON_FIRE, new EntityId(), SimulationSettings.InvalidPosition);
+            stateMachine.TriggerTransition(LumberjackFSMState.StateEnum.ON_FIRE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
         }
 
         public void OnExtinguish()
         {
-			stateMachine.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+            stateMachine.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
         }
     }
 }

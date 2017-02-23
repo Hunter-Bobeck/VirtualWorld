@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Abilities
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class SpellcastAudioTriggers : MonoBehaviour
     {
         [Require] private Spells.Reader spells;

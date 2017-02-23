@@ -38,28 +38,28 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new TeamAssignment.Data(teamId));
             template.Add(new Flammable.Data(false, true, FireEffectType.SMALL));
 
-            var specificClientPredicate = CommonRequirementSets.SpecificClientOnly(clientWorkerId);
+            var specificClientPredicate = CommonPredicates.SpecificClientOnly(clientWorkerId);
 
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
                 .SetWriteAccess<ClientAuthorityCheck>(specificClientPredicate)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<PlayerInfo>(CommonRequirementSets.PhysicsOnly)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<PlayerInfo>(CommonPredicates.PhysicsOnly)
                 .SetWriteAccess<PlayerControls>(specificClientPredicate)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Spells>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Inventory>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Chat>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Heartbeat>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TeamAssignment>(CommonRequirementSets.PhysicsOnly);
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Spells>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Inventory>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Chat>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Heartbeat>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TeamAssignment>(CommonPredicates.PhysicsOnly);
 
             template.SetAcl(permissions);
 
             return template;
         }
-
+        
         public static SnapshotEntity CreateBarracksTemplate(Coordinates initialPosition, BarracksState barracksState, uint teamId)
         {
             var template = new SnapshotEntity { Prefab = SimulationSettings.BarracksPrefabName };
@@ -73,18 +73,18 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new TeamAssignment.Data(teamId));
 
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<BarracksInfo>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<StockpileDepository>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<NPCSpawner>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TeamAssignment>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly);
-
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<BarracksInfo>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<StockpileDepository>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<NPCSpawner>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TeamAssignment>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly);
+            
             template.SetAcl(permissions);
 
             return template;
@@ -101,13 +101,13 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new TreeState.Data((TreeType)UnityEngine.Random.Range(0, 2), TreeFSMState.HEALTHY));
 
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Harvestable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TreeState>(CommonRequirementSets.PhysicsOnly);
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Harvestable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TreeState>(CommonPredicates.PhysicsOnly);
 
             template.SetAcl(permissions);
 
@@ -121,21 +121,21 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new FSimAuthorityCheck.Data());
             template.Add(new Health.Data(SimulationSettings.LumberjackMaxHealth, SimulationSettings.LumberjackMaxHealth, true));
             template.Add(new Flammable.Data(false, true, FireEffectType.SMALL));
-            template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, new EntityId(), 0f));
+            template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, EntityId.InvalidEntityId, 0f));
             template.Add(new Inventory.Data(0));
-            template.Add(new NPCLumberjack.Data(LumberjackFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition.ToVector3f()));
+            template.Add(new NPCLumberjack.Data(LumberjackFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition.ToVector3f()));
 			template.Add(new TeamAssignment.Data(teamId));
-
+            
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TargetNavigation>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Inventory>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<NPCLumberjack>(CommonRequirementSets.PhysicsOnly)
-				.SetWriteAccess<TeamAssignment>(CommonRequirementSets.PhysicsOnly);
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TargetNavigation>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Inventory>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<NPCLumberjack>(CommonPredicates.PhysicsOnly)
+				.SetWriteAccess<TeamAssignment>(CommonPredicates.PhysicsOnly);
 
             template.SetAcl(permissions);
 
@@ -149,21 +149,21 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new FSimAuthorityCheck.Data());
             template.Add(new Health.Data(SimulationSettings.WizardMaxHealth, SimulationSettings.WizardMaxHealth, true));
             template.Add(new Flammable.Data(false, true, FireEffectType.SMALL));
-            template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, new EntityId(), 0f));
+            template.Add(new TargetNavigation.Data(NavigationState.INACTIVE, Vector3f.ZERO, EntityId.InvalidEntityId, 0f));
             template.Add(new Spells.Data(new Map<SpellType, float> { { SpellType.LIGHTNING, 0f }, { SpellType.RAIN, 0f } }, true));
-            template.Add(new NPCWizard.Data(WizardFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition.ToVector3f()));
+            template.Add(new NPCWizard.Data(WizardFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition.ToVector3f()));
             template.Add(new TeamAssignment.Data(teamId));
-
+            
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TargetNavigation>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Spells>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<NPCWizard>(CommonRequirementSets.PhysicsOnly)
-				.SetWriteAccess<TeamAssignment>(CommonRequirementSets.PhysicsOnly);
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TargetNavigation>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Spells>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<NPCWizard>(CommonPredicates.PhysicsOnly)
+				.SetWriteAccess<TeamAssignment>(CommonPredicates.PhysicsOnly);
 
             template.SetAcl(permissions);
 
@@ -181,13 +181,13 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new Flammable.Data(false, true, FireEffectType.BIG));
 
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<HQInfo>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TeamAssignment>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly);
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<HQInfo>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Health>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<TeamAssignment>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<Flammable>(CommonPredicates.PhysicsOnly);
 
             template.SetAcl(permissions);
 
@@ -202,11 +202,11 @@ namespace Assets.Gamelogic.EntityTemplate
             template.Add(new PlayerLifeCycle.Data(new Map<string, EntityId>()));
 
             var permissions = Acl.Build()
-                .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
-                .SetWriteAccess<TransformComponent>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<FSimAuthorityCheck>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<PlayerLifeCycle>(CommonRequirementSets.PhysicsOnly);
-
+                .SetReadAccess(CommonPredicates.PhysicsOrVisual)
+                .SetWriteAccess<TransformComponent>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<FSimAuthorityCheck>(CommonPredicates.PhysicsOnly)
+                .SetWriteAccess<PlayerLifeCycle>(CommonPredicates.PhysicsOnly);
+				
             template.SetAcl(permissions);
 
             return template;

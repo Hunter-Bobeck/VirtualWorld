@@ -81,7 +81,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
             }
             else
             {
-                Owner.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+                Owner.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
             }
         }
 
@@ -102,7 +102,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
         {
             var waitAndPerfromTransition = TimerUtils.WaitAndPerform(SimulationSettings.NPCStockpilingAnimationFinishdelay, () =>
             {
-                Owner.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+                Owner.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
             });
             transitionToIdleDelayCoroutine = parentBehaviour.StartCoroutine(waitAndPerfromTransition);
         }

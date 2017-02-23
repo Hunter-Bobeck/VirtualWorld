@@ -17,6 +17,6 @@ type UnregisterBarracksRequest {
 component HQInfo {
   id = 1700;
   data HQInfoData;
-  command improbable.core.Nothing register_barracks(RegisterBarracksRequest);
-  command improbable.core.Nothing unregister_barracks(UnregisterBarracksRequest);
+  command RegisterBarracksRequest register_barracks returns improbable.core.Nothing;
+  command UnregisterBarracksRequest unregister_barracks returns improbable.core.Nothing;
 }

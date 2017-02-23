@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Core
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class TransformSender : MonoBehaviour
     {
         [Require] private TransformComponent.Writer transformComponent;

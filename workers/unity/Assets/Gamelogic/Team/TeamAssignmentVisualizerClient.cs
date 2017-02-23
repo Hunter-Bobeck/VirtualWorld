@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Team
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class TeamAssignmentVisualizerClient : MonoBehaviour
     {
         [Require] private TeamAssignment.Reader teamAssignment;

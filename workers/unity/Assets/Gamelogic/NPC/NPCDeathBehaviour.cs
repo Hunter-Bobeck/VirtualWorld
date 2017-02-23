@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.NPC
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class NPCDeathBehaviour : MonoBehaviour
     {
         [Require] private FSimAuthorityCheck.Writer fSimAuthorityCheck;

@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Tree
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class TreeBehaviour : MonoBehaviour
     {
         [Require] private TreeState.Writer tree;

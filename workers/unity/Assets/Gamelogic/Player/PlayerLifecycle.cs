@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Player
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     class PlayerLifecycle : MonoBehaviour
     {
 		[Require] private ClientAuthorityCheck.Writer clientAuthorityCheck;

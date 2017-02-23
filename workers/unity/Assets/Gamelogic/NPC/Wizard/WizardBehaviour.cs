@@ -13,7 +13,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.NPC.Wizard
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class WizardBehaviour : MonoBehaviour, IFlammable
     {
         [Require] private NPCWizard.Writer npcWizard;
@@ -48,12 +48,12 @@ namespace Assets.Gamelogic.NPC.Wizard
 
         public void OnIgnite()
         {
-            stateMachine.TriggerTransition(WizardFSMState.StateEnum.ON_FIRE, new EntityId(), SimulationSettings.InvalidPosition);
+            stateMachine.TriggerTransition(WizardFSMState.StateEnum.ON_FIRE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
         }
 
         public void OnExtinguish()
         {
-            stateMachine.TriggerTransition(WizardFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
+            stateMachine.TriggerTransition(WizardFSMState.StateEnum.IDLE, EntityId.InvalidEntityId, SimulationSettings.InvalidPosition);
         }
     }
 }

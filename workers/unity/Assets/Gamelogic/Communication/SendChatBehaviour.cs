@@ -2,13 +2,10 @@ using Improbable.Core;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
-using Improbable.Unity.Core;
-using Improbable.Communication;
-
 
 namespace Assets.Gamelogic.Communication
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class SendChatBehaviour : MonoBehaviour
     {
         [Require] private ClientAuthorityCheck.Writer authCheck;

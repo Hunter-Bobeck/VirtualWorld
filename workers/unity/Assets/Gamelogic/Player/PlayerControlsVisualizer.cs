@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Player
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class PlayerControlsVisualizer : MonoBehaviour
     {
         [Require] private FSimAuthorityCheck.Writer fsimAuthorityCheck;

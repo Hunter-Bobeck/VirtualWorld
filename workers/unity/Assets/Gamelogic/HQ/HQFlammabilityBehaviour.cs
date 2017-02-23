@@ -8,7 +8,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.HQ
 {
-    [WorkerType(WorkerPlatform.UnityWorker)]
+    [EngineType(EnginePlatform.FSim)]
     public class HQFlammabilityBehaviour : MonoBehaviour
     {
         [Require] private Health.Writer health;

@@ -25,6 +25,6 @@ type SpellsData {
 component Spells {
   id = 1500;
   data SpellsData;
-  command improbable.core.Nothing spell_cast_request(SpellCastRequest);
+  command SpellCastRequest spell_cast_request returns improbable.core.Nothing;
   event SpellAnimationEvent spell_animation_event;
 }

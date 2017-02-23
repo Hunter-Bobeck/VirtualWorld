@@ -512,7 +512,7 @@ MonoBehaviour:
       AssemblyName: 
       DeploymentId: 
       DeploymentTag: prod
-      WorkerPlatform: 2
+      EnginePlatform: 2
       LoginToken: 
     Unity:
       EntityCreationLimitPerFrame: 100

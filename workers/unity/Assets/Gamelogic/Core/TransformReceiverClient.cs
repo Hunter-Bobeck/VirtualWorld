@@ -6,7 +6,7 @@ using UnityEngine;
 
 namespace Assets.Gamelogic.Core
 {
-    [WorkerType(WorkerPlatform.UnityClient)]
+    [EngineType(EnginePlatform.Client)]
     public class TransformReceiverClient : MonoBehaviour
     {
         [Require] private TransformComponent.Reader transformComponent;

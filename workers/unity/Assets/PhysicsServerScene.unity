@@ -244,7 +244,7 @@ MonoBehaviour:
       AssemblyName: 
       DeploymentId: 
       DeploymentTag: prod
-      WorkerPlatform: 1
+      EnginePlatform: 1
       LoginToken: 
     Unity:
       EntityCreationLimitPerFrame: 0
