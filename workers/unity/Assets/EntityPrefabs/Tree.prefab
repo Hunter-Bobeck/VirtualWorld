@@ -16,9 +16,9 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010704767160}
+  - component: {fileID: 4000010704767160}
   m_Layer: 10
   m_Name: Models
   m_TagString: Untagged
@@ -31,12 +31,12 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013054680916}
-  - 33: {fileID: 33000013954839800}
-  - 23: {fileID: 23000013472472656}
-  - 136: {fileID: 136000011773977470}
+  - component: {fileID: 4000013054680916}
+  - component: {fileID: 33000013954839800}
+  - component: {fileID: 23000013472472656}
+  - component: {fileID: 136000011773977470}
   m_Layer: 10
   m_Name: Burnt
   m_TagString: Untagged
@@ -49,22 +49,22 @@ GameObject:
   m_ObjectHideFlags: 0
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000013285673902}
-  - 114: {fileID: 114000013513642092}
-  - 136: {fileID: 136000012185933128}
-  - 114: {fileID: 114000013250409000}
-  - 82: {fileID: 82000010039188448}
-  - 114: {fileID: 114000012434398404}
-  - 114: {fileID: 114000012644177238}
-  - 114: {fileID: 114000011453182044}
-  - 114: {fileID: 114000011747310430}
-  - 114: {fileID: 114000010037877532}
-  - 114: {fileID: 114000010641551850}
-  - 114: {fileID: 114000011894190966}
-  - 114: {fileID: 114000013392266944}
-  - 114: {fileID: 114000010672189374}
+  - component: {fileID: 4000013285673902}
+  - component: {fileID: 114000013513642092}
+  - component: {fileID: 136000012185933128}
+  - component: {fileID: 114000013250409000}
+  - component: {fileID: 82000010039188448}
+  - component: {fileID: 114000012434398404}
+  - component: {fileID: 114000012644177238}
+  - component: {fileID: 114000011453182044}
+  - component: {fileID: 114000011747310430}
+  - component: {fileID: 114000010037877532}
+  - component: {fileID: 114000010641551850}
+  - component: {fileID: 114000011894190966}
+  - component: {fileID: 114000013392266944}
+  - component: {fileID: 114000010672189374}
   m_Layer: 10
   m_Name: Tree
   m_TagString: Untagged
@@ -77,11 +77,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000012331368160}
-  - 33: {fileID: 33000013862653464}
-  - 23: {fileID: 23000011040420246}
+  - component: {fileID: 4000012331368160}
+  - component: {fileID: 33000013862653464}
+  - component: {fileID: 23000011040420246}
   m_Layer: 10
   m_Name: HealthyTree
   m_TagString: Untagged
@@ -94,11 +94,11 @@ GameObject:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 4
+  serializedVersion: 5
   m_Component:
-  - 4: {fileID: 4000010764772052}
-  - 33: {fileID: 33000011642614546}
-  - 23: {fileID: 23000012789268502}
+  - component: {fileID: 4000010764772052}
+  - component: {fileID: 33000011642614546}
+  - component: {fileID: 23000012789268502}
   m_Layer: 10
   m_Name: Stump
   m_TagString: Untagged
@@ -115,13 +115,13 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000013054680916}
   - {fileID: 4000010764772052}
   - {fileID: 4000012331368160}
   m_Father: {fileID: 4000013285673902}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000010764772052
 Transform:
   m_ObjectHideFlags: 1
@@ -131,10 +131,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.366, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010704767160}
   m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000012331368160
 Transform:
   m_ObjectHideFlags: 1
@@ -144,10 +144,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1.5, y: 1.5, z: 1.5}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010704767160}
   m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013054680916
 Transform:
   m_ObjectHideFlags: 1
@@ -157,10 +157,10 @@ Transform:
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0.45, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 4000010704767160}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4000013285673902
 Transform:
   m_ObjectHideFlags: 1
@@ -168,13 +168,13 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013016623192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 642.13873, y: -3.52545e-18, z: 158.77216}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000010704767160}
   m_Father: {fileID: 0}
   m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!23 &23000011040420246
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -189,7 +189,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -197,7 +199,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -218,7 +220,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -226,7 +230,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -247,7 +251,9 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_Materials:
   - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
-  m_SubsetIndices: 
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
   m_StaticBatchRoot: {fileID: 0}
   m_ProbeAnchor: {fileID: 0}
   m_LightProbeVolumeOverride: {fileID: 0}
@@ -255,7 +261,7 @@ MeshRenderer:
   m_PreserveUVs: 0
   m_IgnoreNormalsForChartDetection: 0
   m_ImportantGI: 0
-  m_SelectedWireframeHidden: 0
+  m_SelectedEditorRenderState: 3
   m_MinimumChartSize: 4
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
@@ -275,7 +281,7 @@ MeshFilter:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013391458384}
-  m_Mesh: {fileID: 4300000, guid: d8527ae4981eec643a63bbd24202aa1c, type: 3}
+  m_Mesh: {fileID: 4300000, guid: 0590cc40a80d44122bba3c777206723c, type: 3}
 --- !u!33 &33000013954839800
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -299,6 +305,7 @@ AudioSource:
   Loop: 0
   Mute: 0
   Spatialize: 0
+  SpatializePostEffects: 0
   Priority: 128
   DopplerLevel: 1
   MinDistance: 1
@@ -311,12 +318,14 @@ AudioSource:
   rolloffCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
       tangentMode: 0
-    - time: 1
+    - serializedVersion: 2
+      time: 1
       value: 0
       inSlope: 0
       outSlope: 0
@@ -327,7 +336,8 @@ AudioSource:
   panLevelCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -338,7 +348,8 @@ AudioSource:
   spreadCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 0
       inSlope: 0
       outSlope: 0
@@ -349,7 +360,8 @@ AudioSource:
   reverbZoneMixCustomCurve:
     serializedVersion: 2
     m_Curve:
-    - time: 0
+    - serializedVersion: 2
+      time: 0
       value: 1
       inSlope: 0
       outSlope: 0
@@ -418,7 +430,7 @@ MonoBehaviour:
   Stump: {fileID: 1000014047129968}
   BurntTree: {fileID: 1000012089284470}
   meshes:
-  - {fileID: 4300000, guid: d8527ae4981eec643a63bbd24202aa1c, type: 3}
+  - {fileID: 4300000, guid: c01966a2c531f854a878feec9e2536b8, type: 3}
   - {fileID: 4300000, guid: 284d70b3542447e4594c226bae825b56, type: 3}
 --- !u!114 &114000011894190966
 MonoBehaviour:

@@ -20,7 +20,7 @@ namespace Assets.Gamelogic.Tree
 
         private void OnEnable()
         {
-            SetupTreeModel();
+            /*SetupTreeModel();*/
             treeState.ComponentUpdated += UpdateVisualization;
             ShowTreeModel(treeState.Data.currentState);
         }
