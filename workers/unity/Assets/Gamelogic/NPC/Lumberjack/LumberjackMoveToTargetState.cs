@@ -133,7 +133,7 @@ namespace Assets.Gamelogic.NPC.Lumberjack
                 Owner.TriggerTransition(LumberjackFSMState.StateEnum.IDLE, new EntityId(), SimulationSettings.InvalidPosition);
                 return;
             }
-            if (NPCUtils.IsTargetAHealthyTree(parentBehaviour.gameObject, targetGameObject) &&
+            if (NPCUtils.IsTargetAUneatenGrass(parentBehaviour.gameObject, targetGameObject) &&
                 NPCUtils.IsWithinInteractionRange(parentBehaviour.transform.position, targetGameObject.transform.position, SimulationSettings.NPCDefaultInteractionSqrDistance))
             {
                 Owner.TriggerTransition(LumberjackFSMState.StateEnum.HARVESTING, Owner.Data.targetEntityId, SimulationSettings.InvalidPosition);

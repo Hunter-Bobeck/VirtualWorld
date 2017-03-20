@@ -3,23 +3,23 @@ using Assets.Gamelogic.Fire;
 using Assets.Gamelogic.Life;
 using Improbable.Fire;
 using Improbable.Life;
-using Improbable.Tree;
+using Improbable.Grass;
 using Improbable.Unity;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
 
-namespace Assets.Gamelogic.Tree
+namespace Assets.Gamelogic.Grass
 {
     [WorkerType(WorkerPlatform.UnityWorker)]
-    public class TreeBehaviour : MonoBehaviour
+    public class GrassBehaviour : MonoBehaviour
     {
-        [Require] private TreeState.Writer tree;
+        [Require] private GrassState.Writer grass;
         [Require] private Flammable.Writer flammable;
         [Require] private Health.Writer health;
 
         [SerializeField] private FlammableBehaviour flammableInterface;
 
-        private TreeStateMachine stateMachine;
+        private GrassStateMachine stateMachine;
 
         private void Awake()
         {
@@ -28,13 +28,13 @@ namespace Assets.Gamelogic.Tree
 
         private void OnEnable()
         {
-            stateMachine = new TreeStateMachine(this, 
-                tree,
+            stateMachine = new GrassStateMachine(this, 
+                grass,
                 health,
                 flammableInterface,
                 flammable);
 
-            stateMachine.OnEnable(tree.Data.currentState);
+            stateMachine.OnEnable(grass.Data.currentState);
         }
 
         private void OnDisable()

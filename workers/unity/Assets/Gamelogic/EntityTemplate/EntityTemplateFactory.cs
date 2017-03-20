@@ -13,7 +13,7 @@ using Improbable.Math;
 using Improbable.Npc;
 using Improbable.Player;
 using Improbable.Team;
-using Improbable.Tree;
+using Improbable.Grass;
 using Improbable.Unity.Core.Acls;
 using Improbable.Worker;
 
@@ -90,15 +90,15 @@ namespace Assets.Gamelogic.EntityTemplate
             return template;
         }
 
-        public static SnapshotEntity CreateTreeTemplate(Coordinates initialPosition, uint initialRotation)
+        public static SnapshotEntity CreateGrassTemplate(Coordinates initialPosition, uint initialRotation)
         {
-            var template = new SnapshotEntity { Prefab = SimulationSettings.TreePrefabName };
+            var template = new SnapshotEntity { Prefab = SimulationSettings.GrassPrefabName };
             template.Add(new FSimAuthorityCheck.Data());
             template.Add(new TransformComponent.Data(initialPosition, initialRotation));
             template.Add(new Harvestable.Data());
-            template.Add(new Health.Data(SimulationSettings.TreeMaxHealth, SimulationSettings.TreeMaxHealth, true));
+            template.Add(new Health.Data(SimulationSettings.GrassMaxHealth, SimulationSettings.GrassMaxHealth, true));
             template.Add(new Flammable.Data(false, true, FireEffectType.BIG));
-            template.Add(new TreeState.Data((TreeType)UnityEngine.Random.Range(0, 2), TreeFSMState.HEALTHY));
+            template.Add(new GrassState.Data((GrassType)UnityEngine.Random.Range(0, 2), GrassFSMState.UNEATEN));
 
             var permissions = Acl.Build()
                 .SetReadAccess(CommonRequirementSets.PhysicsOrVisual)
@@ -107,7 +107,7 @@ namespace Assets.Gamelogic.EntityTemplate
                 .SetWriteAccess<Harvestable>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Health>(CommonRequirementSets.PhysicsOnly)
                 .SetWriteAccess<Flammable>(CommonRequirementSets.PhysicsOnly)
-                .SetWriteAccess<TreeState>(CommonRequirementSets.PhysicsOnly);
+                .SetWriteAccess<GrassState>(CommonRequirementSets.PhysicsOnly);
 
             template.SetAcl(permissions);
 

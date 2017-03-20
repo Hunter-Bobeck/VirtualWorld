@@ -30,7 +30,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
 
         public override void Enter()
         {
-            CheckForNearbyTreesOrStockpiles();
+            CheckForNearbyGrassOrStockpiles();
         }
 
         public override void Tick()
@@ -41,7 +41,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
         {
         }
 
-        private void CheckForNearbyTreesOrStockpiles()
+        private void CheckForNearbyGrassOrStockpiles()
         {
             GameObject targetEntity;
             if (inventory.HasResources())
@@ -55,7 +55,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
             }
             else
             {
-                targetEntity = NPCUtils.FindNearestTarget(parentBehaviour.gameObject, SimulationSettings.NPCViewRadius, NPCUtils.IsTargetAHealthyTree, LayerMask.GetMask(SimulationSettings.TreeLayerName));
+                targetEntity = NPCUtils.FindNearestTarget(parentBehaviour.gameObject, SimulationSettings.NPCViewRadius, NPCUtils.IsTargetAUneatenGrass, LayerMask.GetMask(SimulationSettings.GrassLayerName));
                 if (targetEntity == null)
                 {
                     MoveToRandomPlaceNearby();

@@ -1,16 +1,16 @@
 using Assets.Gamelogic.FSM;
 using Improbable.Fire;
 using Improbable.Life;
-using Improbable.Tree;
+using Improbable.Grass;
 
-namespace Assets.Gamelogic.Tree
+namespace Assets.Gamelogic.Grass
 {
-    public class TreeBurningState : FsmBaseState<TreeStateMachine, TreeFSMState>
+    public class GrassBurningState : FsmBaseState<GrassStateMachine, GrassFSMState>
     {
         private readonly Flammable.Writer flammable;
         private readonly Health.Writer health;
 
-        public TreeBurningState(TreeStateMachine owner, Flammable.Writer inFlammable, Health.Writer inHealth) 
+        public GrassBurningState(GrassStateMachine owner, Flammable.Writer inFlammable, Health.Writer inHealth) 
             : base(owner)
         {
             flammable = inFlammable;
@@ -40,7 +40,7 @@ namespace Assets.Gamelogic.Tree
         {
             if (update.currentHealth.HasValue && update.currentHealth.Value <= 0)
             {
-                Owner.TriggerTransition(TreeFSMState.BURNT);
+                Owner.TriggerTransition(GrassFSMState.BURNT);
             }
         }
 
@@ -48,7 +48,7 @@ namespace Assets.Gamelogic.Tree
         {
             if (HasBeenExtinguished(update))
             {
-                Owner.TriggerTransition(TreeFSMState.HEALTHY);
+                Owner.TriggerTransition(GrassFSMState.UNEATEN);
             }
         }
 

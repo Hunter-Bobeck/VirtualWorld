@@ -11,7 +11,7 @@ namespace Assets.Gamelogic.Core
         public static string NPCPrefabName = "NPCLumberjack";
         public static string NPCWizardPrefabName = "NPCWizard";
         public static string HQPrefabName = "HQ";
-        public static string TreePrefabName = "Tree";
+        public static string GrassPrefabName = "Grass";
         public static string StockpilePrefabName = "Stockpile";
         public static string BarracksPrefabName = "Barracks";
         public static string SimulationManagerEntityName = "SimulationManagerEntity";
@@ -29,7 +29,7 @@ namespace Assets.Gamelogic.Core
 
         // Unity Layers
         public static string TerrainLayerName = "Terrain";
-        public static string TreeLayerName = "Tree";
+        public static string GrassLayerName = "Grass";
         public static string BarrackLayerName = "Barrack";
 
         // UI
@@ -41,19 +41,19 @@ namespace Assets.Gamelogic.Core
         public static float SimulationTickInterval = 1f;
         public static Vector3 InvalidPosition = Vector3.one * -9999;
 
-        // Tree
-        public static int TreeMaxHealth = 3;
+        // Grass
+        public static int GrassMaxHealth = 3;
         public static int HarvestReturnQuantity = 1;
-        public static int TreeBurningTimeSecs = 10;
-        public static int TreeStumpRegrowthTimeSecs = 300;
-        public static int BurntTreeRegrowthTimeSecs = 600;
-        public static float TreeIgnitionTimeBuffer = 0.4f;
-        public static float TreeExtinguishTimeBuffer = 1f;
-        public static float TreeCutDownTimeBuffer = 1f;
+        public static int GrassBurningTimeSecs = 10;
+        public static int GrassEatenRegrowthTimeSecs = 300;
+        public static int BurntGrassRegrowthTimeSecs = 600;
+        public static float GrassIgnitionTimeBuffer = 0.4f;
+        public static float GrassExtinguishTimeBuffer = 1f;
+        public static float GrassCutDownTimeBuffer = 1f;
 
         // Entity counts
-        public static int AttemptedTreeCount = 30000;
-        public static float TreeJitter = 2.0f;
+        public static int AttemptedGrassCount = 30000;
+        public static float GrassJitter = 2.0f;
         public static int NPCCount = 40;
 
         // Component Updates

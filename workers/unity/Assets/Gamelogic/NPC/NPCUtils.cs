@@ -2,11 +2,11 @@ using Assets.Gamelogic.Building;
 using Assets.Gamelogic.Fire;
 using Assets.Gamelogic.Life;
 using Assets.Gamelogic.Team;
-using Assets.Gamelogic.Tree;
+using Assets.Gamelogic.Grass;
 using Assets.Gamelogic.Utils;
 using Improbable;
 using Improbable.Building;
-using Improbable.Tree;
+using Improbable.Grass;
 using Improbable.Unity.Core;
 using System;
 using UnityEngine;
@@ -119,13 +119,13 @@ namespace Assets.Gamelogic.NPC
                    teamAssignment.TeamId == targetTeamAssignmentVisualizer.TeamId;
         }
 
-        public static bool IsTargetAHealthyTree(GameObject reference, GameObject target)
+        public static bool IsTargetAUneatenGrass(GameObject reference, GameObject target)
         {
-            var targetTreeStateVisualizer = target.GetComponent<TreeStateVisualizer>();
+            var targetGrassStateVisualizer = target.GetComponent<GrassStateVisualizer>();
             var targetHealthVisualizer = target.GetComponent<HealthVisualizer>();
-            return targetTreeStateVisualizer != null && 
+            return targetGrassStateVisualizer != null && 
                    targetHealthVisualizer != null &&
-                   targetTreeStateVisualizer.CurrentState == TreeFSMState.HEALTHY &&
+                   targetGrassStateVisualizer.CurrentState == GrassFSMState.UNEATEN &&
                    targetHealthVisualizer.CurrentHealth > 0;
         }
 

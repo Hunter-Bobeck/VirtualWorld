@@ -3,11 +3,11 @@ using Assets.Gamelogic.Core;
 using Assets.Gamelogic.Life;
 using Improbable.Entity.Component;
 using Improbable.Life;
-using Improbable.Tree;
+using Improbable.Grass;
 using Improbable.Unity.Visualizer;
 using UnityEngine;
 
-namespace Assets.Gamelogic.Tree
+namespace Assets.Gamelogic.Grass
 {
     public class HarvestableBehaviour : MonoBehaviour
     {

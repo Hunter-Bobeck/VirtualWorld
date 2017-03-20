@@ -7,7 +7,7 @@ using Assets.Gamelogic.NPC.Lumberjack;
 using Assets.Gamelogic.Utils;
 using Improbable;
 using Improbable.Core;
-using Improbable.Tree;
+using Improbable.Grass;
 using Improbable.Unity.Core;
 using Improbable.Worker;
 
@@ -18,7 +18,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
         private readonly LumberjackBehaviour parentBehaviour;
         private readonly Inventory.Writer inventory;
 
-        private Coroutine harvestTreeDelayCoroutine;
+        private Coroutine harvestGrassDelayCoroutine;
         private Coroutine transitionToIdleDelayCoroutine;
 
         public LumberjackHarvestingState(LumberjackStateMachine owner,
@@ -34,7 +34,7 @@ namespace Assets.Gamelogic.NPC.LumberJack
         {
             if (!inventory.HasResources())
             {
-                harvestTreeDelayCoroutine = parentBehaviour.StartCoroutine(TimerUtils.WaitAndPerform(SimulationSettings.NPCChoppingAnimationStartDelay, AttemptToHarvestTree));
+                harvestGrassDelayCoroutine = parentBehaviour.StartCoroutine(TimerUtils.WaitAndPerform(SimulationSettings.NPCChoppingAnimationStartDelay, AttemptToHarvestGrass));
             }
             else
             {
@@ -48,16 +48,16 @@ namespace Assets.Gamelogic.NPC.LumberJack
 
         public override void Exit(bool disabled)
         {
-            StopHarvestTreeDelayRoutine();
+            StopHarvestGrassDelayRoutine();
             StopTransitionToRoutine();
         }
 
-        private void StopHarvestTreeDelayRoutine()
+        private void StopHarvestGrassDelayRoutine()
         {
-            if (harvestTreeDelayCoroutine != null)
+            if (harvestGrassDelayCoroutine != null)
             {
-                parentBehaviour.StopCoroutine(harvestTreeDelayCoroutine);
-                harvestTreeDelayCoroutine = null;
+                parentBehaviour.StopCoroutine(harvestGrassDelayCoroutine);
+                harvestGrassDelayCoroutine = null;
             }
         }
 
@@ -70,10 +70,10 @@ namespace Assets.Gamelogic.NPC.LumberJack
             }
         }
 
-        private void AttemptToHarvestTree()
+        private void AttemptToHarvestGrass()
         {
             var targetGameObject = NPCUtils.GetTargetGameObject(Owner.Data.targetEntityId);
-            if (targetGameObject != null && NPCUtils.IsTargetAHealthyTree(parentBehaviour.gameObject, targetGameObject))
+            if (targetGameObject != null && NPCUtils.IsTargetAUneatenGrass(parentBehaviour.gameObject, targetGameObject))
             {
                 SpatialOS.Commands.SendCommand(inventory,
                     Harvestable.Commands.Harvest.Descriptor,

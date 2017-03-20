@@ -1,0 +1,18 @@
+package improbable.grass;
+
+enum GrassFSMState {
+  UNEATEN = 0;
+  EATEN = 1;
+  BURNING = 2;
+  BURNT = 3;
+}
+
+type GrassStateData {
+  GrassType grass_type = 1;
+  GrassFSMState current_state = 2;
+} 
+
+component GrassState {
+  id = 1600;
+  data GrassStateData;
+}

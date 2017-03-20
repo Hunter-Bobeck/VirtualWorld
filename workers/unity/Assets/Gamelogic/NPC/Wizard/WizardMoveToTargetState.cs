@@ -105,7 +105,7 @@ namespace Assets.Gamelogic.NPC.Wizard
 
         private EntityId FindNearestTargetToAttackOrDefend()
         {
-            var layerMask = ~(1 << LayerMask.NameToLayer(SimulationSettings.TreeLayerName));
+            var layerMask = ~(1 << LayerMask.NameToLayer(SimulationSettings.GrassLayerName));
             var nearestDefendableTarget = NPCUtils.FindNearestTarget(parentBehaviour.gameObject, SimulationSettings.NPCViewRadius, NPCUtils.IsTargetDefendable, layerMask);
             var nearestAttackableTarget = NPCUtils.FindNearestTarget(parentBehaviour.gameObject, SimulationSettings.NPCViewRadius, NPCUtils.IsTargetAttackable, layerMask);
 
