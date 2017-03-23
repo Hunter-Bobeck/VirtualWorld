@@ -17,18 +17,18 @@ namespace Assets.Editor
             snapshot.Add(snapshot.GenerateId(), entity);
         }
 
-        public static void AddTrees(SnapshotBuilder snapshot, Texture2D sampler, float sampleThreshold, int countAproximate, double edgeLength, float placementJitter)
+        public static void AddGrasss(SnapshotBuilder snapshot, Texture2D sampler, float sampleThreshold, int countAproximate, double edgeLength, float placementJitter)
         {
-            var treeCountSqrt = Mathf.CeilToInt(Mathf.Sqrt(countAproximate));
-            var spawnGridIntervals = edgeLength / treeCountSqrt;
+            var grassCountSqrt = Mathf.CeilToInt(Mathf.Sqrt(countAproximate));
+            var spawnGridIntervals = edgeLength / grassCountSqrt;
 
-            for (var z = 0; z < treeCountSqrt; z++)
+            for (var z = 0; z < grassCountSqrt; z++)
             {
-                var zProportion = z / (float)treeCountSqrt;
+                var zProportion = z / (float)grassCountSqrt;
 
-                for (var x = 0; x < treeCountSqrt; x++)
+                for (var x = 0; x < grassCountSqrt; x++)
                 {
-                    var xProportion = x / (float)treeCountSqrt;
+                    var xProportion = x / (float)grassCountSqrt;
                     var xPixel = (int) (xProportion * sampler.width);
                     var zPixel = (int) (zProportion * sampler.height);
                     var sample = sampler.GetPixel(xPixel, zPixel).maxColorComponent;
@@ -42,18 +42,18 @@ namespace Assets.Editor
                         Coordinates worldRoot = new Coordinates(-edgeLength/2, 0, -edgeLength/2);
                         Vector3d offsetFromWorldRoot = new Vector3d(x, 0d, z) * spawnGridIntervals;
                         Coordinates spawnPosition = worldRoot + offsetFromWorldRoot + positionJitter;
-                        AddTree(snapshot, spawnPosition);
+                        AddGrass(snapshot, spawnPosition);
                     }
                 }
             }
         }
 
-        public static void AddTree(SnapshotBuilder snapshot, Coordinates position)
+        public static void AddGrass(SnapshotBuilder snapshot, Coordinates position)
         {
-            var treeEntityId = snapshot.GenerateId();
+            var grassEntityId = snapshot.GenerateId();
             var spawnRotation = (uint)Mathf.CeilToInt((float)rand.NextDouble() * 360.0f);
-            var entity = EntityTemplateFactory.CreateTreeTemplate(position, spawnRotation);
-            snapshot.Add(treeEntityId, entity);
+            var entity = EntityTemplateFactory.CreateGrassTemplate(position, spawnRotation);
+            snapshot.Add(grassEntityId, entity);
         }
 
         public static void AddHQs(SnapshotBuilder snapshot, Coordinates[] locations)

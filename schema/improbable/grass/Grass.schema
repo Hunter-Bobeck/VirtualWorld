@@ -1,5 +1,10 @@
 package improbable.grass;
 
+enum GrassType {
+  SHORT = 0;
+  LONG = 1;
+}
+
 enum GrassFSMState {
   UNEATEN = 0;
   EATEN = 1;
