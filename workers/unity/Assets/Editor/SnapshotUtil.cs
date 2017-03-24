@@ -17,7 +17,7 @@ namespace Assets.Editor
             snapshot.Add(snapshot.GenerateId(), entity);
         }
 
-        public static void AddGrasss(SnapshotBuilder snapshot, Texture2D sampler, float sampleThreshold, int countAproximate, double edgeLength, float placementJitter)
+        public static void AddGrass(SnapshotBuilder snapshot, Texture2D sampler, float sampleThreshold, int countAproximate, double edgeLength, float placementJitter)
         {
             var grassCountSqrt = Mathf.CeilToInt(Mathf.Sqrt(countAproximate));
             var spawnGridIntervals = edgeLength / grassCountSqrt;
