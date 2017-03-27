@@ -66,7 +66,7 @@ GameObject:
   - component: {fileID: 114000013392266944}
   - component: {fileID: 114000010672189374}
   m_Layer: 10
-  m_Name: Tree
+  m_Name: Grass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,7 +168,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013016623192}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -67.877304, y: 0.19352704, z: -21.035568}
+  m_LocalPosition: {x: 2.3876734, y: 0.054527044, z: 2.4631617}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4000010704767160}
@@ -188,7 +188,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
+  - {fileID: 2100000, guid: 1dfa5916d21ea438ba0a49dd93659e15, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -219,7 +219,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -250,7 +250,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 66c9f8786d57afe498993913be780709, type: 2}
+  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -426,9 +426,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 22a775f1f863a004db29c2db2d6cd134, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HealthyTree: {fileID: 1000013391458384}
-  Stump: {fileID: 1000014047129968}
-  BurntTree: {fileID: 1000012089284470}
+  UneatenGrass: {fileID: 100004, guid: 0590cc40a80d44122bba3c777206723c, type: 3}
+  Eaten: {fileID: 100002, guid: 284d70b3542447e4594c226bae825b56, type: 3}
+  BurntGrass: {fileID: 100000, guid: 7601fa9acad37984a9558c59c4520128, type: 3}
   meshes:
   - {fileID: 4300000, guid: c01966a2c531f854a878feec9e2536b8, type: 3}
   - {fileID: 4300000, guid: 284d70b3542447e4594c226bae825b56, type: 3}
