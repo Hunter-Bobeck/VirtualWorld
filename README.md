@@ -5,7 +5,7 @@ This repository contains a project template built with [Unity](https://unity3d.c
 The framework is the product of Team A of the Virtual World Design course ([*MSCH-G290*](http://registrar.indiana.edu/browser/soc4172/MSCH/MSCH-G290.shtml)) taught by [Professor Edward Castronova](http://mediaschool.indiana.edu/profile/?p=castro) in conjunction with [Professor Mike Sellers](http://mediaschool.indiana.edu/profile/?p=sellers).
 
 
-# Documentation
+## Documentation
 
 Currently, this is the starter HelloWorld project that you can use to build your own SpatialOS application.
 
@@ -16,7 +16,7 @@ Included are a couple of automated console command scripts:
 For other command-running purposes, commands must be run through a GIT Bash shell in a local copy of the project root.
 
 
-# Tool Documentations
+### Tool Documentations
 
 [Unity game engine](https://docs.unity3d.com/)
         
